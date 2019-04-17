@@ -1,0 +1,32 @@
+{
+  "name": "rely_playground",
+  "version": "0.0.0",
+  "description": "Rely playground",
+  "esy": {
+    "build": "refmterr dune build"
+  },
+  "scripts": {
+    "test": "esy x RunTests.exe"
+  },
+  "dependencies": {
+    "@esy-ocaml/reason": "*",
+    "@opam/dune": ">=1.7.0",
+    "@opam/httpkit": "*",
+    "@opam/httpkit-lwt": "*",
+    "@opam/ppx_deriving_yojson": "3.3",
+    "@opam/yojson": "1.5.0",
+    "@reason-native/console": "*",
+    "@reason-native/rely": "^2.0.0",
+    "ocaml": "^4.4.0",
+    "refmterr": "*"
+  },
+  "resolutions": {
+    "@opam/httpkit": "ostera/httpkit:httpkit.opam#5e627eb",
+    "@opam/httpkit-lwt": "ostera/httpkit:httpkit-lwt.opam#5e627eb",
+    "@opam/httpaf": "anmonteiro/httpaf:httpaf.opam#57e9dd2",
+    "@opam/httpaf-lwt": "anmonteiro/httpaf:httpaf-lwt.opam#57e9dd2"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*"
+  }
+}

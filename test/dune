@@ -1,0 +1,30 @@
+(library
+   (name RelyPlayground)
+   (public_name rely_playground.lib)
+   ; the linkall flag ensures that all of our tests are compiled and the
+   ; -g flag emits debugging information
+   (ocamlopt_flags -linkall -g)
+   ; you will want to depend on the library you are testing as well, however for
+   ; the purposes of this example we are only depending on the test runner itself
+   (libraries 
+      console.lib
+      rely.lib
+      lwt
+      httpkit-lwt
+      httpkit
+      httpaf
+      httpaf-lwt)
+   (preprocess (pps ppx_deriving_yojson))
+   (modules (:standard \ RunTests))
+)
+(executable
+  ; the for the library is automatically detected because of the name, but we
+  ; need to explicitly specify the package here
+  (package rely_playground)
+  (name RunTests)
+  (public_name RunTests.exe)
+  (libraries rely_playground.lib)
+  (modules RunTests)
+)
+(include_subdirs unqualified)
+(dirs :standard __tests__)
