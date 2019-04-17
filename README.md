@@ -4,7 +4,7 @@
 
 ```
 npm install -g esy
-git clone <this-repo>
+git clone https://github.com/baransu/rely-playground
 esy install
 esy build
 ```
